@@ -217,7 +217,7 @@ Las tablas están interconectadas mediante claves foráneas que permiten gestion
 
 ## Diagrama ERD
 
-![Diagrama ERD](FanPage Sailor Moon.jpg)
+![Diagrama ERD](FanPageSailorMoon.jpg)
 
 ## Instalación y Uso
 
