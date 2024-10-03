@@ -1,11 +1,27 @@
 # FAN PAGE SAILOR MOON
 
+## Tabla de Contenido
+
+| Índice | Título |
+|--|--|
+| 1. | [Descripción](#descripcion) |
+| 2. | [Requisitos del Sistema](#requisitos-del-sistema) |
+| 3. | [Tablas Principales](#tablas-principales) |
+| 4. | [Tablas Secundarias](#tablas-secundarias) |
+| 5. | [Esquema DDL y DML](#esquema-ddl-y-dml) |
+| 6. | [Ejemplos de Consultas](#ejemplos-de-consultas) |
+| 7. | [Estructura de la Base de Datos](#estructura-de-la-base-de-datos) |
+| 8. | [Instalación y Uso](#instalacion-y-uso) |
+| 9. | [Autores](#autores) |
+
 ## Descripción del Proyecto
-Este proyecto tiene como objetivo diseñar y crear una base de datos relacional que capture y gestione información sobre diversos aspectos del universo de *Sailor Moon* (Fan page). Esta base de datos está pensada para ser usada en una fan page, proporcionando una estructura clara y eficiente para almacenar y consultar datos relacionados con películas, series, mangas, personajes, transformaciones, ataques, videojuegos, artbooks, actores, y más.
+
+Este proyecto tiene como objetivo diseñar y crear una base de datos relacional que capture y gestione información sobre diversos aspectos del universo de *Sailor Moon*. Está pensado para ser utilizado en una fan page, proporcionando una estructura clara y eficiente para almacenar y consultar datos relacionados con películas, series, mangas, personajes, transformaciones, ataques, videojuegos, artbooks, actores y más.
 
 La base de datos también manejará relaciones complejas entre estos elementos a través de tablas secundarias.
 
 ## Requisitos del Sistema
+
 - **Base de datos**: MySQL (recomendado) u otro sistema de gestión de bases de datos relacionales.
 - **Lenguaje**: SQL para la definición y manipulación de los datos.
 - **Herramientas adicionales**: Recomendable utilizar herramientas como MySQL Workbench para la gestión y el diseño visual de la base de datos.
@@ -67,12 +83,12 @@ Almacena datos de los actores que han participado en las diferentes producciones
 ### Transformaciones
 Registra información sobre las transformaciones de los personajes, vinculadas a la tabla de Personajes.
 - `nombre`: Nombre de la transformación.
-- `personaje`: Clave foránea que referencia el personaje.
+- `personaje`: Clave foránea que referencia al personaje.
 
 ### Ataques
 Contiene información sobre los ataques utilizados por los personajes, también vinculados a la tabla de Personajes.
 - `nombre`: Nombre del ataque.
-- `personaje`: Clave foránea que referencia el personaje.
+- `personaje`: Clave foránea que referencia al personaje.
 
 ## Tablas Secundarias
 
@@ -155,22 +171,71 @@ Define los formatos de las películas.
 - `nombre`: Nombre del formato (DVD, Blu-Ray, etc.).
 
 ## Esquema DDL y DML
+
 - El archivo `ddl.sql` contiene las sentencias SQL para crear las tablas principales y secundarias mencionadas anteriormente.
-- El archivo `dml.sql` incluye sentencias de inserción de datos en estas tablas, incluyendo personajes, episodios, películas, y más.
+- El archivo `dml.sql` incluye sentencias de inserción de datos en estas tablas, incluyendo personajes, episodios, películas y más.
+## Estructura de la Base de Datos
 
-## Ejemplos de Consultas
-Algunas consultas SQL que pueden ser útiles:
-1. **Consultar todos los personajes que son Sailor Scouts**:
-   ```sql
-   SELECT nombre FROM Personajes WHERE sailor_scouts = TRUE;
+El diseño de la base de datos se compone de tablas principales y tablas secundarias, que gestionan las relaciones entre los diferentes elementos.
+
+### Tablas Principales
+
+- **Películas**: Almacena los detalles de las películas de Sailor Moon, incluyendo el nombre, año de lanzamiento, director y formato.
+- **Series**: Contiene información sobre las series (anime o live-action), incluyendo el número de temporadas.
+- **Mangas**: Registra los mangas, el autor y las ediciones correspondientes.
+- **Musicales**: Guarda información sobre los musicales, su trama y año de lanzamiento.
+- **Personajes**: Almacena detalles sobre los personajes, incluyendo edad, sexo, ocupación y tipo de personaje (protagonista, antagonista, secundario).
+- **Videojuegos**: Almacena datos sobre los videojuegos de Sailor Moon y los sistemas (plataformas) donde se pueden jugar.
+- **Artbooks**: Contiene información sobre los artbooks relacionados con Sailor Moon.
+- **Actores**: Registra los actores que han interpretado a los personajes, incluyendo su nacionalidad y fecha de nacimiento.
+- **Transformaciones**: Registra las transformaciones de los personajes, vinculadas a la tabla `Personajes`.
+- **Ataques**: Contiene información sobre los ataques utilizados por los personajes.
+
+### Tablas Secundarias
+
+- **Actor_personaje**: Relaciona los actores con los personajes que interpretan.
+- **Canciones**: Almacena datos sobre las canciones presentes en series, películas o musicales.
+- **Temporadas**: Registra detalles de las temporadas de las series, vinculadas a la tabla `Series`.
+- **Episodios**: Contiene información sobre los episodios de la serie, relacionados con la tabla `Temporadas`.
+- **Tipo_personaje**: Define el tipo de personaje (protagonista, antagonista o secundario).
+- **Ediciones (manga)**: Almacena información sobre las ediciones de los mangas, relacionada con la tabla `Mangas`.
+- **Volúmenes (manga)**: Contiene información sobre los volúmenes pertenecientes a una edición, relacionados con la tabla `Ediciones`.
+- **Actos (manga)**: Registra detalles de los actos dentro de los volúmenes, vinculados a la tabla `Volúmenes`.
+- **Objetos**: Almacena información sobre los objetos importantes dentro del universo de Sailor Moon.
+- **Lugares**: Contiene detalles sobre los lugares que aparecen en el universo de Sailor Moon.
+- **Sistemas**: Registra las plataformas en las que los videojuegos de Sailor Moon están disponibles.
+- **Apariciones**: Registra las apariciones de personajes, objetos, lugares, canciones, transformaciones y ataques en cada medio (películas, series, videojuegos, mangas, musicales).
+
+### Relaciones Entre Tablas
+
+Las tablas están interconectadas mediante claves foráneas que permiten gestionar las relaciones entre personajes, actores, transformaciones, y medios en los que aparecen, como películas, series, y mangas. Algunas de las relaciones más importantes son:
+
+- La relación entre `Personajes` y `Actores` está gestionada por la tabla intermedia `Actor_personaje`.
+- Las `Transformaciones` y `Ataques` están vinculados directamente con la tabla de `Personajes`.
+- La tabla `Apariciones` juega un papel clave al registrar en qué medios (películas, series, mangas, videojuegos, musicales) aparecen los personajes, objetos, lugares, transformaciones o ataques.
+- La tabla `Sistemas` está relacionada con los `Videojuegos` para especificar en qué plataformas se pueden jugar.
+
+## Diagrama ERD
+
+![Diagrama ERD](FanPage Sailor Moon.jpg)
+
+## Instalación y Uso
+
+1. Clona este repositorio:  
    ```
-2. **Consultar todas las películas dirigidas por un director específico**:
-   ```sql
-   SELECT nombre FROM Películas WHERE director = 'Nombre del Director';
+   git clone (https://github.com/laura2ndrea/FanPage-Sailor-Moon.git)
    ```
 
-3. **Consultar todas las transformaciones de un personaje específico**:
-   ```sql
-   SELECT nombre FROM Transformaciones WHERE personaje = (SELECT id FROM Personajes WHERE nombre = 'Sailor Moon');
-   ```
+2. Carga los archivos SQL en tu sistema de gestión de bases de datos para crear las tablas y poblarlas con los datos iniciales. Asegúrate de ejecutar primero el archivo `ddl.sql` para crear las tablas y luego el archivo `dml.sql` para insertar los datos.
+   
+3. Verifica que todas las relaciones están correctamente establecidas revisando las claves foráneas en tu sistema de gestión de base de datos.
 
+## Archivos
+
+- `ddl.sql`: Archivo de definición de la base de datos. Contiene las sentencias SQL para la creación de tablas y relaciones.
+- `dml.sql`: Archivo que contiene sentencias SQL para la inserción de datos iniciales en las tablas.
+- `README.md`: Archivo con la documentación del proyecto.
+
+## Autores👤
+[Michelle Sánchez](https://github.com/miDaya02)
+[Laura Rodriguez](https://github.com/laura2ndrea)
