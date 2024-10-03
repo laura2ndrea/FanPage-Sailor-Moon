@@ -217,7 +217,7 @@ Las tablas están interconectadas mediante claves foráneas que permiten gestion
 
 ## Diagrama ERD
 
-![Diagrama ERD](FanPage%20Sailor%20Moon.jpg)
+![Diagrama ERD](FanPage Sailor Moon.jpg)
 
 ## Instalación y Uso
 
@@ -236,3 +236,6 @@ Las tablas están interconectadas mediante claves foráneas que permiten gestion
 - `dml.sql`: Archivo que contiene sentencias SQL para la inserción de datos iniciales en las tablas.
 - `README.md`: Archivo con la documentación del proyecto.
 
+## Autores👤
+[Michelle Sánchez](https://github.com/miDaya02)
+[Laura Rodriguez](https://github.com/laura2ndrea)
