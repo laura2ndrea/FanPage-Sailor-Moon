@@ -26,47 +26,47 @@ INSERT INTO Elementos (nombre, id_tipo_elemento) VALUES
 ('Planeta Mau', 2),  
 ('Caldera de la Galaxia', 2),  
 ('Planeta Kinmoku', 2),  
-('Sailor Chibi Moon', 3), 
-('Chibiusa', 3), 
-('Sailor Moon', 3), 
-('Usagi Tsukino', 3), 
-('Sailor Mercury', 3), 
-('Ami Mizuno', 3), 
-('Sailor Mars', 3), 
-('Rei Hino', 3), 
-('Sailor Jupiter', 3), 
-('Makoto Kino', 3), 
-('Sailor Venus', 3), 
-('Minako Aino', 3), 
-('Sailor Galaxia', 3), 
+('Sailor Chibi Moon', 3),  -- relacionada con chibi chibi sailor scouts prota aparece en todos los medios
+('Chibiusa', 3), -- relacionada con Sailor Cosmos prota aparece en todos los medios
+('Sailor Moon', 3), -- relacionada con usagi, sailor scouts prota aparace en todos los medios 
+('Usagi Tsukino', 3), -- relacionada con sailor moo prota aparece en todos los medios 
+('Sailor Mercury', 3), -- relaciona con ami mizuno sailor socut, prota 
+('Ami Mizuno', 3), -- relacionada con sairlo mercury, prota 
+('Sailor Mars', 3), -- relacionada con rei hino sailor scouts, prota
+('Rei Hino', 3), -- relacionada con sailor mars, prota 
+('Sailor Jupiter', 3), -- relacionada con Makoto Kino sairlo scouts, prota 
+('Makoto Kino', 3), -- relacionada con juoiter
+('Sailor Venus', 3), -- relacionada con minao
+('Minako Aino', 3), -- relacionada con venus 
+('Sailor Galaxia', 3), -- antagonistas 
 ('Sailor Chaos', 3), 
 ('Nephrite', 3), 
-('Hanayome', 3),  
+('Hanayome', 3),  -- relacionado con nephrite , mujer, sale en el manga y en el crystal 
 ('Zoisite', 3), 
-('Black Lady', 3), 
-('Eudial', 3), 
-('Mimet', 3), 
-('Mamoru Chiba', 3), 
+('Black Lady', 3), -- relacionada con chibusa 
+('Eudial', 3), -- todas partes excepto en el live
+('Mimet', 3), -- todas partes excepto en el live 
+('Mamoru Chiba', 3), -- relaciona con tuxedo es hombre y prota 
 ('Tuxedo Mask', 3), 
-('Luna', 3), 
-('Artemis', 3), 
-('Kyusuke Sarashina', 3), 
-('Kurume Suri', 3), 
-('Eternal Sailor Moon ¡Transformación!', 4), 
-('Doble Poder Cósmico Lunar ¡Acción!', 4),  
-('Por el Poder del Cristal del Planeta Júpiter ¡Transformación!, Make Up', 4), 
-('Por el Poder del Cristal del Planeta Mercurio ¡Transformación!', 4), 
-('Metamorfosis Lunar ¡Acción!', 4), 
-('Prenda de la Luna Eterna', 5), 
-('Cetro Lunar', 5), 
-('Cristal de Plata', 5), 
-('Luna-P', 5), 
-('Santo Grial', 5), 
-('Centella Relampagueante de Júpiter', 6), 
-('Tiara Lunar ¡Acción! ', 6), 
-('Curación Lunar ¡Acción! ', 6), 
-('Que los Demonios se Dispersen', 6), 
-('Cadena de Amor de Venus', 6); 
+('Luna', 3), -- prota, el mejor personaje  
+('Artemis', 3), -- prota, el macho de luna 
+('Kyusuke Sarashina', 3), -- personaje secundario 
+('Kurume Suri', 3), -- personaje secundario   
+('Eternal Sailor Moon ¡Transformación!', 4), -- usagi 
+('Doble Poder Cósmico Lunar ¡Acción!', 4), -- chibusa 
+('Por el Poder del Cristal del Planeta Júpiter ¡Transformación!, Make Up', 4), -- makoto 
+('Por el Poder del Cristal del Planeta Mercurio ¡Transformación!', 4), -- Ami Mizuno
+('Metamorfosis Lunar ¡Acción!', 4), -- sailor moon 
+('Prenda de la Luna Eterna', 5), -- usagi
+('Cetro Lunar', 5), -- sailor moon 
+('Cristal de Plata', 5), -- chibusa 
+('Luna-P', 5), -- chibusa
+('Santo Grial', 5), -- sailor chibi 
+('Centella Relampagueante de Júpiter', 6), -- sailor jupiter 
+('Tiara Lunar ¡Acción! ', 6), -- sailor moon
+('Curación Lunar ¡Acción! ', 6), -- sailor moon
+('Que los Demonios se Dispersen', 6), -- sailor mars 
+('Cadena de Amor de Venus', 6); -- sailor venus 
 
 -- Inserciones en la tabla Tipos_medios 
 INSERT INTO Tipos_medios (nombre) VALUES
@@ -420,10 +420,10 @@ INSERT INTO Personajes (edad, ocupacion, sailor_scout, id_sexo, id_tipo_personaj
 (16, 'Villano', FALSE, 1, 2, 34),  -- Black Lady
 (25, 'Villano', FALSE, 2, 2, 35),  -- Eudial
 (25, 'Villano', FALSE, 2, 2, 36),  -- Mimet
-(16, 'Estudiante', TRUE, 2, 1, 37),      -- Mamoru Chiba
-(18, 'Héroe', TRUE, 2, 1, 38),      -- Tuxedo Mask
-(10, 'Heroína', TRUE, 1, 1, 39),   -- Luna (Principal)
-(10, 'Héroe', TRUE, 2, 1, 40),   -- Artemis (Principal)
+(16, 'Estudiante', FALSE, 2, 1, 37),      -- Mamoru Chiba
+(18, 'Héroe', FALSE, 2, 1, 38),      -- Tuxedo Mask
+(10, 'Heroína', FALSE, 1, 1, 39),   -- Luna (Principal)
+(10, 'Héroe', FALSE, 2, 1, 40),   -- Artemis (Principal)
 (14, 'Estudiante', FALSE, 2, 3, 41), -- Kyusuke Sarashina
 (14, 'Estudiante', FALSE, 2, 3, 42); -- Kurume Suri
 
@@ -460,7 +460,7 @@ INSERT INTO Formas_personajes (id_personaje1, id_personaje2) VALUES
 (10, 11),  -- Sailor Jupiter & Makoto Kino
 (12, 13),  -- Sailor Venus & Minako Aino
 (15, 16),  -- Nephrite & Hanayome
-(2, 17),  -- Chibiusa & Black Lady
+(2, 18),  -- Chibiusa & Black Lady
 (21, 22);  -- Mamoru Chiba & Tuxedo Mask
 
 -- Inserciones en la tabla Actores 
