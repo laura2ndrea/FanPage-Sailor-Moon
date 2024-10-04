@@ -9,7 +9,7 @@
 | 4. | [Tablas secundarias](#tablas-secundarias) |
 | 5. | [Esquema DDL y DML](#esquema-ddl-y-dml) |
 | 6. | [Estructura de la base de datos](#estructura-de-la-base-de-datos) |
-| 7. | [Diagrama ERD](#diagrama-erd) |
+| 7. | [Diagrama ER](#diagrama-er) |
 | 8. | [Instalación y uso](#instalacion-y-uso) |
 | 9. | [Archivos](#archivos) |
 | 10. | [Autores](#autores) |
@@ -215,7 +215,7 @@ Las tablas están interconectadas mediante claves foráneas que permiten gestion
 - La tabla `Apariciones` juega un papel clave al registrar en qué medios (películas, series, mangas, videojuegos, musicales) aparecen los personajes, objetos, lugares, transformaciones o ataques.
 - La tabla `Sistemas` está relacionada con los `Videojuegos` para especificar en qué plataformas se pueden jugar.
 
-## Diagrama ERD
+## Diagrama ER
 
 ![Diagrama ERD](FanPageSailorMoon.jpg)
 
