@@ -3,12 +3,16 @@
 ## Tabla de contenido
 | Índice | Título  |
 |--|--|
-| 1. | [Descripción](#descripcion) |
-| 2. | [Características](#caracteristicas) |
-| 3. | [Tecnologías Utilizadas](#tecnologias-utilizadas) |
-| 4. | [Uso del Repositorio](#uso-del-repositorio) |
-| 5. | [Instrucciones de Ejecución](#instrucciones-de-ejecucion) |
-| 6. | [Autores](#autores) |
+| 1. | [Descripción](#descripcion-del-proyecto) |
+| 2. | [Requisitos del sistema](#requisitos-del-sistema) |
+| 3. | [Tablas principales](#tablas-principales) |
+| 4. | [Tablas secundarias](#tablas-secundarias) |
+| 5. | [Esquema DDL y DML](#esquema-ddl-y-dml) |
+| 6. | [Estructura de la base de datos](#estructura-de-la-base-de-datos) |
+| 7. | [Diagrama ERD](#diagrama-erd) |
+| 8. | [Instalación y uso](#instalacion-y-uso) |
+| 9. | [Archivos](#archivos) |
+| 10. | [Autores](#autores) |
 
 ## Descripción del proyecto
 Este proyecto tiene como objetivo diseñar y crear una base de datos relacional que capture y gestione información sobre diversos aspectos del universo de *Sailor Moon*. Está pensado para ser utilizado en una fan page, proporcionando una estructura clara y eficiente para almacenar y consultar datos relacionados con películas, series, mangas, personajes, transformaciones, ataques, videojuegos, actores y más. La base de datos también manejará relaciones complejas entre estos elementos a través de tablas secundarias.
@@ -169,7 +173,7 @@ Define los formatos de las películas.
 - El archivo `ddl.sql` contiene las sentencias SQL para crear las tablas principales y secundarias mencionadas anteriormente.
 - El archivo `dml.sql` incluye sentencias de inserción de datos en estas tablas, incluyendo personajes, episodios, películas y más.
 - El archivo `dql.sql` incluye sentencias de consulta de datos en las diferentes tablas.
-## Estructura de la Base de Datos
+## Estructura de la base de datos
 
 El diseño de la base de datos se compone de tablas principales y tablas secundarias, que gestionan las relaciones entre los diferentes elementos.
 
@@ -187,7 +191,7 @@ El diseño de la base de datos se compone de tablas principales y tablas secunda
 - **Elementos**: Registra los elementos del universo de Sailor Moon (personajes, objetos, lugares, canciones, transformaciones y ataques).
 - **Medios**: Almacena los diferentes medios en los que aparecen los elementos (películas, series, videojuegos, mangas, musicales).
 
-### Tablas Secundarias
+### Tablas secundarias
 
 - **Actor_personaje**: Relaciona los actores con los personajes que interpretan.
 - **Canciones**: Almacena datos sobre las canciones presentes en series, películas o musicales.
